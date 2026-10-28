@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>यादव परिवार का मंगल परिणयोत्सव</title>
+<meta name="description" content="आंचल यादव ♥ अनंत यादव के शुभ विवाह का डिजिटल निमंत्रण — 02 दिसंबर 2026, बुधवार।">
+<meta name="theme-color" content="#5a0f1c">
+<!-- Private family invitation: keep it out of search engines. Remove this line if you want it searchable. -->
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Link preview (WhatsApp etc.). Replace https://YOUR-SITE.example/ with the real address after deployment:
+     run  node tools/set-site-url.js https://your-real-address/  -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hi_IN">
+<meta property="og:title" content="यादव परिवार का मंगल परिणयोत्सव">
+<meta property="og:description" content="आंचल यादव ♥ अनंत यादव के शुभ विवाह में आप सादर आमंत्रित हैं।">
+<meta property="og:image" content="https://YOUR-SITE.example/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<script>
+  // Mark JS as available and lock scrolling while the gate/intro are on screen.
+  document.documentElement.className += ' js';
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preload" as="image" href="assets/photos/ganesh-320.webp" type="image/webp">
+</head>
+<body class="lock">
+<div class="backdrop" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ============ 1 + 2: loading screen and the royal start button ============ -->
+<div id="gate" role="dialog" aria-label="निमंत्रण">
+  <div class="gate-ganesh photo-frame">
+    <img src="assets/photos/ganesh-320.webp" width="320" height="240" alt="सुनहरे गणेश जी" fetchpriority="high" id="gateImg">
+  </div>
+  <h2 class="gate-title gold-text">यादव परिवार का<br>मंगल परिणयोत्सव</h2>
+  <p class="gate-sub" id="gateSub" role="status">निमंत्रण तैयार हो रहा है…</p>
+  <div class="gate-spin" id="gateSpin" aria-hidden="true"></div>
+  <div class="gate-actions" id="gateActions" hidden>
+    <button type="button" class="btn-royal" id="startBtn">शाही निमंत्रण खोलें</button>
+    <p class="gate-note">संगीत के साथ निमंत्रण देखने के लिए बटन दबाएँ। संगीत कभी भी बंद किया जा सकता है।</p>
+  </div>
+</div>
+
+<!-- ============ 3 + 4 + 5: Ganesh, personal welcome, palace-door envelope ============ -->
+<div id="intro" hidden>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="in-mandala" aria-hidden="true"></div>
+  <button type="button" class="skip" id="skipBtn">कार्ड देखें →</button>
+
+  <section class="st st-ganesh" aria-label="श्री गणेश वंदना">
+    <div class="gn-wrap photo-frame"><img src="assets/photos/ganesh-640.webp" srcset="assets/photos/ganesh-640.webp 640w, assets/photos/ganesh-1200.webp 1200w" sizes="(min-width: 600px) 560px, 86vw" width="640" height="480" alt="सुनहरे गणेश जी" decoding="async"></div>
+    <div class="gn-diyas" aria-hidden="true"><img src="assets/art/diya.svg" alt="" width="44" height="59"><img src="assets/art/diya.svg" alt="" width="44" height="59"><img src="assets/art/diya.svg" alt="" width="44" height="59"></div>
+    <p class="st-title gold-text">॥ श्री गणेशाय नमः ॥</p>
+  </section>
+
+  <section class="st st-welcome" aria-label="स्वागत">
+    <div class="w-lotus" aria-hidden="true">
+      <svg viewBox="-110 -120 220 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <linearGradient id="lotA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3b8"/><stop offset=".55" stop-color="#f2c84b"/><stop offset="1" stop-color="#c98d17"/></linearGradient>
+          <linearGradient id="lotB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd3dc"/><stop offset=".5" stop-color="#f4a3b4"/><stop offset="1" stop-color="#c4475f"/></linearGradient>
+          <linearGradient id="lotC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffbe0"/><stop offset="1" stop-color="#f0c040"/></linearGradient>
+          <radialGradient id="lotGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9a0" stop-opacity=".9"/><stop offset="1" stop-color="#ffe9a0" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle class="lot-glow" r="100" fill="url(#lotGlow)"/>
+        <g class="lot-body"><g class="pt" style="--a:0.0deg;--d:0"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:36.0deg;--d:1"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:72.0deg;--d:2"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:108.0deg;--d:3"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:144.0deg;--d:0"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:180.0deg;--d:1"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:216.0deg;--d:2"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:252.0deg;--d:3"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:288.0deg;--d:0"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:324.0deg;--d:1"><path d="M0 0 C-22 -24.1 -18.7 -61.9 0 -86 C18.7 -61.9 22 -24.1 0 0Z" fill="url(#lotB)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -43.0 0 -78" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:18.0deg;--d:5"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:54.0deg;--d:6"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:90.0deg;--d:7"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:126.0deg;--d:8"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:162.0deg;--d:5"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:198.0deg;--d:6"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:234.0deg;--d:7"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:270.0deg;--d:8"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:306.0deg;--d:5"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:342.0deg;--d:6"><path d="M0 0 C-19 -19.6 -16.1 -50.4 0 -70 C16.1 -50.4 19 -19.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -35.0 0 -62" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:0.0deg;--d:10"><path d="M0 0 C-15 -14.6 -12.8 -37.4 0 -52 C12.8 -37.4 15 -14.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -26.0 0 -44" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:45.0deg;--d:11"><path d="M0 0 C-15 -14.6 -12.8 -37.4 0 -52 C12.8 -37.4 15 -14.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -26.0 0 -44" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:90.0deg;--d:12"><path d="M0 0 C-15 -14.6 -12.8 -37.4 0 -52 C12.8 -37.4 15 -14.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -26.0 0 -44" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:135.0deg;--d:13"><path d="M0 0 C-15 -14.6 -12.8 -37.4 0 -52 C12.8 -37.4 15 -14.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -26.0 0 -44" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:180.0deg;--d:10"><path d="M0 0 C-15 -14.6 -12.8 -37.4 0 -52 C12.8 -37.4 15 -14.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -26.0 0 -44" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:225.0deg;--d:11"><path d="M0 0 C-15 -14.6 -12.8 -37.4 0 -52 C12.8 -37.4 15 -14.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -26.0 0 -44" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:270.0deg;--d:12"><path d="M0 0 C-15 -14.6 -12.8 -37.4 0 -52 C12.8 -37.4 15 -14.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -26.0 0 -44" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:315.0deg;--d:13"><path d="M0 0 C-15 -14.6 -12.8 -37.4 0 -52 C12.8 -37.4 15 -14.6 0 0Z" fill="url(#lotA)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -26.0 0 -44" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:30.0deg;--d:14"><path d="M0 0 C-11 -9.5 -9.3 -24.5 0 -34 C9.3 -24.5 11 -9.5 0 0Z" fill="url(#lotC)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -17.0 0 -26" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:90.0deg;--d:15"><path d="M0 0 C-11 -9.5 -9.3 -24.5 0 -34 C9.3 -24.5 11 -9.5 0 0Z" fill="url(#lotC)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -17.0 0 -26" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:150.0deg;--d:16"><path d="M0 0 C-11 -9.5 -9.3 -24.5 0 -34 C9.3 -24.5 11 -9.5 0 0Z" fill="url(#lotC)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -17.0 0 -26" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:210.0deg;--d:17"><path d="M0 0 C-11 -9.5 -9.3 -24.5 0 -34 C9.3 -24.5 11 -9.5 0 0Z" fill="url(#lotC)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -17.0 0 -26" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:270.0deg;--d:14"><path d="M0 0 C-11 -9.5 -9.3 -24.5 0 -34 C9.3 -24.5 11 -9.5 0 0Z" fill="url(#lotC)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -17.0 0 -26" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g><g class="pt" style="--a:330.0deg;--d:15"><path d="M0 0 C-11 -9.5 -9.3 -24.5 0 -34 C9.3 -24.5 11 -9.5 0 0Z" fill="url(#lotC)" stroke="#7a4a07" stroke-width=".8"/><path d="M0 -6 Q0 -17.0 0 -26" fill="none" stroke="#fff3b8" stroke-opacity=".7" stroke-width="1"/></g></g>
+        <circle class="lot-core" r="9" fill="#fff3b8" stroke="#a8650a" stroke-width="1.5"/>
+        <g class="lot-sparks" fill="#fff3b8"><circle cx="95.5" cy="26.0" r="2.2" style="--k:0"/><circle cx="46.7" cy="77.8" r="2.2" style="--k:1"/><circle cx="-29.6" cy="84.1" r="2.2" style="--k:2"/><circle cx="-88.4" cy="41.1" r="2.2" style="--k:3"/><circle cx="-95.5" cy="-26.0" r="2.2" style="--k:4"/><circle cx="-46.7" cy="-77.8" r="2.2" style="--k:5"/><circle cx="29.6" cy="-84.1" r="2.2" style="--k:6"/><circle cx="88.4" cy="-41.1" r="2.2" style="--k:7"/></g>
+      </svg>
+    </div>
+    <p class="w-greet" id="welcomeText"></p>
+    <p class="w-sub" id="welcomeSub"></p>
+    <p class="w-names">आंचल यादव ♥ अनंत यादव</p>
+  </section>
+
+  <section class="st st-env" aria-label="शाही निमंत्रण">
+    <div class="env" aria-hidden="true">
+      <div class="env-arch"></div>
+      <div class="env-room">
+        <div class="env-card">
+          <img src="assets/photos/ganesh-320.webp" alt="" width="160" height="120" class="env-photo">
+          <span class="t1">॥ श्री गणेशाय नमः ॥</span>
+          <span class="t2">आंचल ♥ अनंत</span>
+          <span class="t3">शुभ विवाह · 02 दिसंबर 2026</span>
+        </div>
+        <div class="door door-l"></div>
+        <div class="door door-r"></div>
+      </div>
+    </div>
+    <p class="env-cap">शुभ निमंत्रण खुल रहा है…</p>
+  </section>
+</div>
+
+<!-- ============ the invitation ============ -->
+<main id="site">
+
+  <!-- main card -->
+  <section class="section hero" id="top" aria-labelledby="siteTitle">
+    <canvas id="petalsHero" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="frame card-main">
+        <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+        <div class="photo-frame hero-photo"><img src="assets/photos/ganesh-640.webp" srcset="assets/photos/ganesh-640.webp 640w, assets/photos/ganesh-1200.webp 1200w" sizes="(min-width: 600px) 420px, 80vw" width="640" height="480" alt="सुनहरे गणेश जी" decoding="async"></div>
+        <p class="shlok"><b>॥ श्री गणेशाय नमः ॥</b>
+          विघ्न हरण मंगल करण, श्री गणपति महाराज ।<br>प्रथम निमंत्रण आपको, पूरण कीज्यो काज ।।</p>
+        <img class="divider" src="assets/art/divider.svg" width="320" height="28" alt="">
+        <p class="shlok">सीता ने स्वयंवर रचाया राम सा पति पाने को ।<br>राधा ने कृष्ण को चाहा प्रेम कि राह बताने को ।।</p>
+
+        <h1 class="shubh gold-text" id="siteTitle">यादव परिवार का मंगल परिणयोत्सव</h1>
+        <p class="card-date" style="margin-top:2px">शुभ विवाह</p>
+
+        <div class="names" aria-label="आंचल यादव और अनंत यादव">
+          <span class="nm gold-text">आंचल यादव</span>
+          <span class="heart" aria-hidden="true">♥</span>
+          <span class="nm gold-text">अनंत यादव</span>
+        </div>
+
+        <!-- live countdown, directly under the names -->
+        <div class="countdown-strip" id="countdown" role="timer" aria-label="विवाह की तारीख तक शेष समय">
+          <p class="cd-label">02 दिसंबर 2026 तक शेष समय</p>
+          <div class="cd-grid" id="cdGrid">
+            <div class="cd-box"><span class="cd-num" data-u="d">–</span><span class="cd-unit">दिन</span></div>
+            <div class="cd-box"><span class="cd-num" data-u="h">–</span><span class="cd-unit">घंटे</span></div>
+            <div class="cd-box"><span class="cd-num" data-u="m">–</span><span class="cd-unit">मिनट</span></div>
+            <div class="cd-box"><span class="cd-num" data-u="s">–</span><span class="cd-unit">सेकंड</span></div>
+          </div>
+          <p class="cd-msg" id="cdMsg" hidden></p>
+          <p class="cd-note" id="cdNote">तारीख-आधारित गणना, भारतीय समय (IST) के अनुसार।</p>
+        </div>
+
+        <div class="guest-line" id="guestLine">
+          <span class="g-name" id="guestName" hidden></span>
+          <span class="g-sub" id="guestSub">आप सभी स्नेहीजन सादर आमंत्रित हैं।</span>
+        </div>
+
+        <p class="invite-text">मंगल परिणयोत्सव की मधुरिम बेला पर पधार कर वर वधू को अपने स्नेहिल आशीर्वचनों से अभिसिंचित कर हमें अनुगृहीत करें।</p>
+        <p class="card-date">02 दिसंबर 2026, बुधवार</p>
+        <p class="sayings">समस्त वैवाहिक कार्यक्रम हमारे निवास स्थान से सम्पन्न होगा।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- families -->
+  <section class="section" id="parivar" aria-labelledby="h-parivar">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="gold-text" id="h-parivar">परिवार</h2>
+        <img class="divider" src="assets/art/divider.svg" width="320" height="28" alt="">
+      </div>
+      <div class="family-grid">
+        <article class="frame fam reveal from-l">
+          <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+          <span class="tag">वधू पक्ष</span>
+          <h3 class="gold-text">हृदयकणिका<br>आंचल यादव</h3>
+          <dl>
+            <div><dt>दादा-दादी</dt><dd>श्रीमती सरजू देवी एवं हरिराम यादव</dd></div>
+            <div><dt>माता-पिता</dt><dd>श्रीमती अनीता देवी एवं श्री योगेन्द्र यादव</dd></div>
+            <div><dt>पता</dt><dd>ग्राम हाफिजपुर, पोस्ट हाफिजपुर,<br>जिला आजमगढ़</dd></div>
+          </dl>
+        </article>
+        <article class="frame fam reveal from-r">
+          <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+          <span class="tag">वर पक्ष</span>
+          <h3 class="gold-text">हृदयांश<br>अनंत यादव</h3>
+          <dl>
+            <div><dt>दादा-दादी</dt><dd>श्रीमती इन्द्रावती देवी एवं स्वर्गीय श्री रामचन्द्र यादव</dd></div>
+            <div><dt>माता-पिता</dt><dd>श्रीमती अनीता देवी एवं श्री लालजी यादव</dd></div>
+            <div><dt>पता</dt><dd>ग्राम चकभाई खाँ, पोस्ट चक इनामी,<br>आजमगढ़</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="inviters reveal">
+        <img class="divider" src="assets/art/divider.svg" width="320" height="28" alt="">
+        <h3>विनीत</h3>
+        <p>महेन्द्र यादव, राजेन्द्र यादव, हिमांशु ट्रेडर्स, प्रियांशु उर्फ पिंटू</p>
+        <span class="lbl">दर्शनाभिलाषी</span>
+        <p>जगधारी यादव, तिलकधारी यादव, विनोद यादव (D.M.), मनोज यादव (A.M.), कमलेश, विवेक यादव (S.M.), डब्बू विश्वास, रिशु, विनय, विशाल, सूरज, सौरभ, रितिक, कुणाल, कुन्दन एवं समस्त यादव परिवार</p>
+        <p class="bua-note">चाँद की रोशनी होगी, सितारों से आंगन सजाएंगे।<br>हमें खुशी तब होगी, जब आप हमारे बुआ की शादी में आएँगे।।<em>काव्या, हिमानी</em></p>
+        <p class="sender">प्रेषक: हरिराम यादव — ग्राम हाफिजपुर, पोस्ट हाफिजपुर, जिला आजमगढ़</p>
+        <div class="contact-row">
+          <a href="tel:+917068119002" aria-label="योगेन्द्र यादव को फ़ोन करें">📞 योगेन्द्र यादव · 7068119002</a>
+          <a href="tel:+919889336182" aria-label="पिन्टू यादव को फ़ोन करें">📞 पिन्टू यादव · 9889336182</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- venue -->
+  <section class="section" id="sthal" aria-labelledby="h-sthal">
+    <div class="wrap">
+      <div class="frame venue reveal" style="max-width:760px;margin-inline:auto">
+        <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+        <h2 class="gold-text" id="h-sthal" style="font-family:var(--f-royal);font-weight:400;font-size:clamp(1.7rem,7vw,2.6rem)">विवाह स्थल</h2>
+        <img class="divider" src="assets/art/divider.svg" width="320" height="28" alt="">
+        <p class="addr"><strong>वधू पक्ष का निवास</strong>ग्राम हाफिजपुर, पोस्ट हाफिजपुर,<br>जिला आजमगढ़, उत्तर प्रदेश।</p>
+        <a class="btn-royal" id="mapBtn" href="https://maps.app.goo.gl/DnUfBcpL1vEA4HMD9" target="_blank" rel="noopener noreferrer">📍 विवाह स्थल तक पहुँचने के लिए यहाँ क्लिक करें</a>
+        <p class="note">समस्त वैवाहिक कार्यक्रम हमारे निवास स्थान से सम्पन्न होगा।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- timeline of rituals -->
+  <section class="section" id="karyakram" aria-labelledby="h-karyakram">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="gold-text" id="h-karyakram">मांगलिक कार्यक्रम</h2>
+        <img class="divider" src="assets/art/divider.svg" width="320" height="28" alt="">
+      </div>
+      <ol class="timeline">
+        <li class="tl-item reveal"><i class="tl-dot" aria-hidden="true"></i>
+          <article class="tl-card">
+            <img src="assets/photos/haldi-640.webp" srcset="assets/photos/haldi-640.webp 640w, assets/photos/haldi-1200.webp 1200w" sizes="(min-width: 860px) 40vw, 86vw" width="640" height="480" loading="lazy" decoding="async" alt="हल्दी की रस्म — पीले वस्त्रों में बैठी वधू को परिवार की महिलाएँ हल्दी लगा रही हैं">
+            <div class="tl-body"><p class="tl-no">पहला दिन</p><h3 class="tl-name gold-text">हल्दी</h3><p class="tl-date">30 नवंबर 2026, सोमवार</p></div>
+          </article></li>
+        <li class="tl-item reveal"><i class="tl-dot" aria-hidden="true"></i>
+          <article class="tl-card">
+            <img src="assets/photos/mehndi-640.webp" srcset="assets/photos/mehndi-640.webp 640w, assets/photos/mehndi-1200.webp 1200w" sizes="(min-width: 860px) 40vw, 86vw" width="640" height="480" loading="lazy" decoding="async" alt="मेहंदी की रस्म — मेहंदी से सजे हाथ, चूड़ियाँ, दीपक और गेंदे के फूल">
+            <div class="tl-body"><p class="tl-no">दूसरा दिन</p><h3 class="tl-name gold-text">मेहंदी</h3><p class="tl-date">01 दिसंबर 2026, मंगलवार</p></div>
+          </article></li>
+        <li class="tl-item reveal"><i class="tl-dot" aria-hidden="true"></i>
+          <article class="tl-card">
+            <img src="assets/photos/ceremony-640.webp" srcset="assets/photos/ceremony-640.webp 640w, assets/photos/ceremony-1200.webp 1200w" sizes="(min-width: 860px) 40vw, 86vw" width="640" height="480" loading="lazy" decoding="async" alt="शुभ विवाह — हवन के सामने वरमाला पहने दूल्हा-दुल्हन, सजा हुआ मंडप">
+            <div class="tl-body"><p class="tl-no">तीसरा दिन</p><h3 class="tl-name gold-text">शुभ विवाह</h3><p class="tl-date">02 दिसंबर 2026, बुधवार</p></div>
+          </article></li>
+        <li class="tl-item reveal"><i class="tl-dot" aria-hidden="true"></i>
+          <article class="tl-card">
+            <img src="assets/photos/vidai-640.webp" srcset="assets/photos/vidai-640.webp 640w, assets/photos/vidai-1200.webp 1200w" sizes="(min-width: 860px) 40vw, 86vw" width="640" height="480" loading="lazy" decoding="async" alt="विदाई — सजी हुई पालकी में बैठी वधू, परिवारजन और फूलों की पंखुड़ियाँ">
+            <div class="tl-body"><p class="tl-no">चौथा दिन</p><h3 class="tl-name gold-text">विदाई</h3><p class="tl-date">03 दिसंबर 2026, गुरुवार</p></div>
+          </article></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- royal gallery -->
+  <section class="section" id="gallery" aria-labelledby="h-gallery">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="gold-text" id="h-gallery">रॉयल गैलरी</h2>
+        <p>सजावटी चित्र — किसी वास्तविक व्यक्ति की तस्वीर नहीं</p>
+        <img class="divider" src="assets/art/divider.svg" width="320" height="28" alt="">
+      </div>
+      <ul class="gallery" id="galleryList">
+        <li class="g-item reveal"><button type="button" class="g-btn" data-full="assets/photos/ganesh-1200.webp" data-cap="सुनहरे गणेश जी"><img src="assets/photos/ganesh-640.webp" srcset="assets/photos/ganesh-640.webp 640w, assets/photos/ganesh-1200.webp 1200w" sizes="(min-width: 860px) 30vw, (min-width: 640px) 45vw, 92vw" width="640" height="480" loading="lazy" decoding="async" alt="सुनहरे गणेश जी, कमल के आसन पर, फूलों और दीपकों से सजे"></button><p class="g-cap">सुनहरे गणेश जी</p></li>
+        <li class="g-item reveal"><button type="button" class="g-btn" data-full="assets/photos/couple-1200.webp" data-cap="शाही दूल्हा-दुल्हन"><img src="assets/photos/couple-640.webp" srcset="assets/photos/couple-640.webp 640w, assets/photos/couple-1200.webp 1200w" sizes="(min-width: 860px) 30vw, (min-width: 640px) 45vw, 92vw" width="640" height="480" loading="lazy" decoding="async" alt="शेरवानी में दूल्हा और लहंगे में दुल्हन, सजे राजसी मंडप में"></button><p class="g-cap">शाही दूल्हा-दुल्हन</p></li>
+        <li class="g-item reveal"><button type="button" class="g-btn" data-full="assets/photos/haldi-1200.webp" data-cap="हल्दी की रस्म"><img src="assets/photos/haldi-640.webp" srcset="assets/photos/haldi-640.webp 640w, assets/photos/haldi-1200.webp 1200w" sizes="(min-width: 860px) 30vw, (min-width: 640px) 45vw, 92vw" width="640" height="480" loading="lazy" decoding="async" alt="हल्दी की रस्म"></button><p class="g-cap">हल्दी की रस्म</p></li>
+        <li class="g-item reveal"><button type="button" class="g-btn" data-full="assets/photos/mehndi-1200.webp" data-cap="मेहंदी की रस्म"><img src="assets/photos/mehndi-640.webp" srcset="assets/photos/mehndi-640.webp 640w, assets/photos/mehndi-1200.webp 1200w" sizes="(min-width: 860px) 30vw, (min-width: 640px) 45vw, 92vw" width="640" height="480" loading="lazy" decoding="async" alt="मेहंदी की रस्म"></button><p class="g-cap">मेहंदी की रस्म</p></li>
+        <li class="g-item reveal"><button type="button" class="g-btn" data-full="assets/photos/mandap-1200.webp" data-cap="फूलों और दीपकों से सजा विवाह मंडप"><img src="assets/photos/mandap-640.webp" srcset="assets/photos/mandap-640.webp 640w, assets/photos/mandap-1200.webp 1200w" sizes="(min-width: 860px) 30vw, (min-width: 640px) 45vw, 92vw" width="640" height="480" loading="lazy" decoding="async" alt="फूलों, परदों और दीपकों से सजा विवाह मंडप"></button><p class="g-cap">सजा हुआ विवाह मंडप</p></li>
+        <li class="g-item reveal"><button type="button" class="g-btn" data-full="assets/photos/ceremony-1200.webp" data-cap="विवाह समारोह"><img src="assets/photos/ceremony-640.webp" srcset="assets/photos/ceremony-640.webp 640w, assets/photos/ceremony-1200.webp 1200w" sizes="(min-width: 860px) 30vw, (min-width: 640px) 45vw, 92vw" width="640" height="480" loading="lazy" decoding="async" alt="विवाह समारोह — हवन के सामने दूल्हा-दुल्हन"></button><p class="g-cap">विवाह समारोह</p></li>
+        <li class="g-item reveal"><button type="button" class="g-btn" data-full="assets/photos/vidai-1200.webp" data-cap="विदाई का भावपूर्ण पारंपरिक दृश्य"><img src="assets/photos/vidai-640.webp" srcset="assets/photos/vidai-640.webp 640w, assets/photos/vidai-1200.webp 1200w" sizes="(min-width: 860px) 30vw, (min-width: 640px) 45vw, 92vw" width="640" height="480" loading="lazy" decoding="async" alt="विदाई का दृश्य — सजी पालकी और फूलों की वर्षा"></button><p class="g-cap">विदाई का पल</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- closing -->
+  <section class="section closing" id="samapan" aria-labelledby="h-close">
+    <canvas id="petals" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="photo-frame closing-photo reveal"><img src="assets/photos/ganesh-640.webp" srcset="assets/photos/ganesh-640.webp 640w, assets/photos/ganesh-1200.webp 1200w" sizes="(min-width: 600px) 520px, 90vw" width="640" height="480" loading="lazy" decoding="async" alt="सुनहरे गणेश जी, कमल के आसन पर"></div>
+      <div class="lamps" aria-hidden="true">
+        <img src="assets/art/diya.svg" width="48" height="64" alt="" loading="lazy"><img src="assets/art/diya.svg" width="48" height="64" alt="" loading="lazy"><img src="assets/art/diya.svg" width="48" height="64" alt="" loading="lazy"><img src="assets/art/diya.svg" width="48" height="64" alt="" loading="lazy"><img src="assets/art/diya.svg" width="48" height="64" alt="" loading="lazy">
+      </div>
+      <h2 class="gold-text reveal" id="h-close">॥ शुभ मंगल हो ॥</h2>
+      <p class="msg reveal">आपकी गरिमामयी उपस्थिति एवं स्नेहिल आशीर्वाद ही नवयुगल के लिए सबसे बड़ा उपहार है। आप सभी का हृदय से धन्यवाद एवं मंगलकामनाएँ।</p>
+      <p class="sign reveal">सादर आमंत्रक — यादव परिवार</p>
+      <p class="foot-tools">कम एनिमेशन / हल्का मोड: <button type="button" id="liteBtn" aria-pressed="false">बंद</button></p>
+    </div>
+    <a class="invite-corner" href="invite.html">निमंत्रण</a>
+  </section>
+</main>
+
+<footer class="credit">वेबसाइट क्रिएटेड बाय <b>हिमांशु यादव उर्फ सिन्टू</b></footer>
+
+<!-- fixed controls -->
+<button type="button" class="fab" id="musicBtn" aria-pressed="false" aria-label="संगीत चालू करें" hidden>
+  <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+  <span id="musicLbl" class="sr-only">संगीत</span>
+</button>
+<button type="button" class="fab" id="toTop" aria-label="पृष्ठ के ऊपर जाएँ">↑ ऊपर जाएँ</button>
+
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="चित्र बड़ा देखें" hidden>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+  <button type="button" class="btn-close" id="lbClose">बंद करें ✕</button>
+</div>
+
+<noscript>
+  <p style="position:fixed;left:0;right:0;bottom:0;z-index:2000;margin:0;padding:10px;text-align:center;background:#fbf1d9;color:#3b0a14;font-family:sans-serif">पूरा शाही अनुभव देखने के लिए कृपया ब्राउज़र में JavaScript चालू करें। संगीत और काउंटडाउन के बिना भी सारी जानकारी ऊपर उपलब्ध है।</p>
+</noscript>
+
+<script src="js/guest.js"></script>
+<script src="js/music.js"></script>
+<script src="js/app.js"></script>
+<script>
+  // Safety net: if app.js failed to start for any reason, never leave the guest stuck on the loading screen.
+  setTimeout(function () {
+    if (window.__yadavBooted) return;
+    var g = document.getElementById('gate'); if (g) g.style.display = 'none';
+    var i = document.getElementById('intro'); if (i) i.style.display = 'none';
+    var s = document.getElementById('site'); if (s) s.className = '';
+    var pb = document.getElementById('progress'); if (pb) pb.style.display = 'none';
+    document.body.className = '';
+  }, 9000);
+</script>
+</body>
+</html>

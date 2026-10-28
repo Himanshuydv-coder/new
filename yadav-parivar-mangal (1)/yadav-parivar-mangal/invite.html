@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>निमंत्रण लिंक बनाएँ — यादव परिवार का मंगल परिणयोत्सव</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#5a0f1c">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { padding: 20px var(--gutter) 60px; }
+  .lm { max-width: 640px; margin: 0 auto; }
+  .lm h1 { font-family: var(--f-royal); font-weight: 400; font-size: clamp(1.6rem, 7vw, 2.4rem); text-align: center; line-height: 1.35; }
+  .lm .lead { text-align: center; color: var(--cream-dim); margin: 6px 0 20px; }
+  .lm label { display: block; font-family: var(--f-ui); font-weight: 600; margin-bottom: 6px; color: var(--gold-pale); }
+  .lm input[type=text], .lm textarea, .lm output {
+    width: 100%; padding: .75em 1em; font: inherit; font-size: 1.1rem; color: var(--ink); background: var(--cream);
+    border: 2px solid var(--gold); border-radius: 10px;
+  }
+  .lm textarea { min-height: 15em; line-height: 1.6; font-size: .98rem; }
+  .lm .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+  .lm .row .btn-royal { flex: 1 1 200px; }
+  .lm .btn-wa { background: linear-gradient(180deg, #5ee08a, #1a9a4b); color: #052b14; border-color: #c9ffd9; }
+  .lm .err { margin-top: 10px; padding: .6em 1em; border-radius: 10px; background: #ffe3e3; color: #7a0e20; font-family: var(--f-ui); font-weight: 600; }
+  .lm .ok { margin-top: 10px; color: var(--gold-pale); font-family: var(--f-ui); font-weight: 600; min-height: 1.6em; }
+  .lm .warn { margin-top: 22px; padding: .8em 1em; border: 1px dashed var(--gold); border-radius: 10px; font-size: .92rem; color: var(--cream-dim); line-height: 1.7; }
+  .lm .res { margin-top: 22px; }
+  .lm .res > * + * { margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"></div>
+<main class="lm">
+  <h1 class="gold-text">निमंत्रण भेजें</h1>
+  <p class="lead">जिसे निमंत्रण देना है उसका नाम लिखें → लिंक बनाएँ → कॉपी करके उसे भेज दें।</p>
+
+  <form id="form" class="frame" novalidate autocomplete="off">
+    <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+    <label for="name">जिसे निमंत्रण देना है उसका नाम (हिंदी में)</label>
+    <input type="text" id="name" name="name" maxlength="80" placeholder="जैसे: राहुल यादव" lang="hi" autocapitalize="off" spellcheck="false" aria-describedby="err">
+    <div id="err" class="err" role="alert" hidden></div>
+    <div class="row"><button type="submit" class="btn-royal">लिंक बनाएँ</button></div>
+
+    <div class="res" id="res" hidden>
+      <div>
+        <label for="link">व्यक्तिगत लिंक</label>
+        <output id="link" for="name" style="display:block;overflow-wrap:anywhere;font-size:.95rem;user-select:all"></output>
+      </div>
+      <div class="row">
+        <button type="button" class="btn-royal" id="copyBtn">लिंक कॉपी करें</button>
+        <a class="btn-royal btn-wa" id="waBtn" href="#" target="_blank" rel="noopener noreferrer">WhatsApp पर भेजें</a>
+      </div>
+      <div class="ok" id="ok" role="status"></div>
+      <div>
+        <label for="msg">WhatsApp संदेश (भेजने से पहले देख लें)</label>
+        <textarea id="msg" readonly></textarea>
+        <div class="row"><button type="button" class="btn-royal" id="copyMsgBtn" style="font-size:1rem">पूरा संदेश कॉपी करें</button></div>
+      </div>
+    </div>
+  </form>
+
+  <p class="warn" id="fileWarn" hidden>⚠️ यह पेज अभी आपके कंप्यूटर/फ़ोन की फाइल से खुला है, इसलिए बने लिंक सही नहीं होंगे। पहले वेबसाइट को होस्टिंग पर डालें और इस पेज को वहीं के पते से खोलें।</p>
+  <p class="warn">अतिथि का नाम लिंक में ही लिखा होता है, इसलिए लिंक आगे भेजने पर नाम भी साथ जाएगा। बने हुए लिंक को बाद में बंद नहीं किया जा सकता। इस पेज पर कुछ भी सहेजा या कहीं भेजा नहीं जाता।</p>
+  <p style="text-align:center;margin-top:22px"><a href="./">← निमंत्रण पर वापस जाएँ</a></p>
+</main>
+
+<script src="js/guest.js"></script>
+<script>
+(function () {
+  'use strict';
+  var G = window.YadavGuest, $ = function (id) { return document.getElementById(id); };
+  var base = new URL('./', window.location.href).href;   // folder that holds index.html (works on any host / sub-folder)
+  if (window.location.protocol === 'file:') $('fileWarn').hidden = false;
+
+  var MSG = {
+    empty: 'कृपया अतिथि का नाम लिखें।',
+    invalid: 'कृपया मान्य नाम लिखें (नाम में कम से कम एक अक्षर होना चाहिए)।',
+    toolong: 'नाम बहुत लंबा है। कृपया ' + G.MAX_LEN + ' अक्षरों तक का नाम लिखें।'
+  };
+
+  function showErr(t) { var e = $('err'); e.textContent = t; e.hidden = !t; }
+  function say(t) { $('ok').textContent = t; }
+
+  $('form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    say('');
+    var r = G.normalizeName($('name').value);
+    if (!r.ok) { showErr(MSG[r.error] || MSG.invalid); $('res').hidden = true; $('name').focus(); return; }
+    showErr('');
+    var link = G.buildLink(base, r.name);
+    var msg = G.buildMessage(r.name, link);
+    $('name').value = r.name;                 // show the cleaned-up spelling
+    $('link').textContent = link;
+    $('msg').value = msg;
+    $('waBtn').href = G.whatsappUrl(msg);    // opens WhatsApp with the message ready; the guest-sender taps "send"
+    $('res').hidden = false;
+  });
+
+  function copy(text, okMsg) {
+    function fallback() {
+      var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      say(ok ? okMsg : 'कॉपी नहीं हो सका — ऊपर के लिंक को दबाकर रखें और "कॉपी" चुनें।');
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { say(okMsg); }, fallback);
+    } else fallback();
+  }
+  $('copyBtn').addEventListener('click', function () { copy($('link').textContent, 'लिंक कॉपी हो गया ✔'); });
+  $('copyMsgBtn').addEventListener('click', function () { copy($('msg').value, 'पूरा संदेश कॉपी हो गया ✔'); });
+  $('waBtn').addEventListener('click', function () { say('WhatsApp खुल रहा है — संदेश भेजने का नियंत्रण आपके पास है, वहाँ "भेजें" दबाने पर ही संदेश जाएगा।'); });
+})();
+</script>
+</body>
+</html>

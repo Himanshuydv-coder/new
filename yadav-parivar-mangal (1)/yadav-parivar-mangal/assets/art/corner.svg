@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><defs>
+  <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff3b8"/><stop offset=".32" stop-color="#f2c84b"/>
+    <stop offset=".7" stop-color="#c98d17"/><stop offset="1" stop-color="#7a4a07"/>
+  </linearGradient>
+  <linearGradient id="gGoldH" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8a5a0c"/><stop offset=".3" stop-color="#f6d869"/>
+    <stop offset=".55" stop-color="#fff0a8"/><stop offset=".8" stop-color="#d49a1f"/><stop offset="1" stop-color="#7a4a07"/>
+  </linearGradient>
+  <radialGradient id="gBg" cx=".5" cy=".42" r=".75">
+    <stop offset="0" stop-color="#9a2236"/><stop offset=".55" stop-color="#5a0f1c"/><stop offset="1" stop-color="#2a0610"/>
+  </radialGradient>
+  <radialGradient id="gGlow" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#ffe9a0" stop-opacity=".85"/><stop offset=".5" stop-color="#f5c542" stop-opacity=".28"/><stop offset="1" stop-color="#f5c542" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="gSkin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0c29c"/><stop offset="1" stop-color="#b9805a"/></linearGradient>
+  <linearGradient id="gRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0304a"/><stop offset="1" stop-color="#7a0e20"/></linearGradient>
+  <linearGradient id="gIvory" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff7e0"/><stop offset="1" stop-color="#e2c485"/></linearGradient>
+  <linearGradient id="gYellow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe680"/><stop offset="1" stop-color="#e9a400"/></linearGradient>
+  <linearGradient id="gGreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8f5a"/><stop offset="1" stop-color="#0f4a2c"/></linearGradient>
+  <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b0a14"/><stop offset=".55" stop-color="#8e1b2b"/><stop offset="1" stop-color="#f08a3c"/></linearGradient>
+  <radialGradient id="gFlame" cx=".5" cy=".75" r=".6"><stop offset="0" stop-color="#fff6a8"/><stop offset=".45" stop-color="#ffb12a"/><stop offset="1" stop-color="#e0451d"/></radialGradient>
+  <radialGradient id="gMari" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd54a"/><stop offset="1" stop-color="#f27a00"/></radialGradient>
+  <radialGradient id="gGem" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#ff8a9a"/><stop offset="1" stop-color="#a00c25"/></radialGradient>
+  <filter id="fSh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".45"/></filter>
+  <filter id="fGl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs><g fill="none" stroke="url(#gGold)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 86 V22 Q4 4 22 4 H86" stroke-width="3"/>
+    <path d="M12 86 V28 Q12 12 28 12 H86" stroke-width="1.2"/>
+    <path d="M22 22 C34 22 38 34 30 40 C24 44 18 38 22 33" stroke-width="2"/>
+    <path d="M22 22 C22 34 34 38 40 30 C44 24 38 18 33 22" stroke-width="2"/>
+    <circle cx="22" cy="22" r="4" fill="url(#gGold)" stroke="none"/>
+    <path d="M46 4 q6 8 0 14 q-6 -6 0 -14Z M4 46 q8 6 14 0 q-6 -6 -14 0Z" fill="url(#gGold)" stroke="none"/>
+    <circle cx="62" cy="8" r="2" fill="url(#gGold)" stroke="none"/><circle cx="8" cy="62" r="2" fill="url(#gGold)" stroke="none"/>
+  </g></svg>
